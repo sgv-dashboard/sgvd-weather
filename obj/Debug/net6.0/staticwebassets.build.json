@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "Nlm4Y4zo6Zbp+22phTGuyn2kx1KlWdFyzR4FISX0DTw=",
+  "Source": "sgvd-weather",
+  "BasePath": "_content/sgvd-weather",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
