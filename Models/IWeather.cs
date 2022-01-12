@@ -4,6 +4,6 @@ namespace Models {
     [ServiceContract]
     interface IWeather {
         [OperationContract]
-        public int getGetal();
+        public string getInfo(float temperature, int rainChance);
     }
 }
