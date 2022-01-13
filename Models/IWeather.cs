@@ -2,7 +2,7 @@ using System.ServiceModel;
 
 namespace Models {
     [ServiceContract]
-    interface IWeather {
+    public interface IWeather {
         [OperationContract]
         public string getInfo(float temperature, int rainChance);
     }
