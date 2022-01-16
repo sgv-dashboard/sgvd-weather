@@ -1,0 +1,61 @@
+openapi: 3.0.0
+info:
+  description: Api for the sgv-dashboard in order to retrieve information about the weather
+
+  version: "1.0.0"
+  title: sgvd-weather
+  contact:
+    email: siemen.vandervoort@student.uhasselt.be
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: developers
+    description: Operations available to regular developers
+paths:
+  /weather.asmx:
+    get:
+      tags:
+        - developers
+      summary: Gets weather info
+      operationId: weather
+      description: |
+        By passing in the appropriate arguments, you can get a some information about the weahter in terms of clothing etc.
+      parameters:
+        - in: query
+          name: temperature
+          description: The temperature of the day.
+          required: true
+          schema:
+            type: number
+            format: float
+        - in: query
+          name: lonS
+          description: The chances of rain for the day.
+          required: true
+          schema:
+            type: number
+            format: int
+            minimum: 0
+            maximum: 100
+      responses:
+        "200":
+          description: weatherInfo
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/weatherInfo"
+        "500":
+          description: bad input parameter
+components:
+  schemas:
+    mapsJson:
+      description: The input parameters and the requested time
+      type: object
+      properties:
+        temperature:
+          type: object
+          format: float (°C)
+        rainChance:
+          type: object
+          format: int (%)
